@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="loadKunDB">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/out/artifacts/loadKunDB_jar/loadKunDB.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -61,6 +61,39 @@ public class DBUtil {
                 }
                 conn.commit();
             }
+            if(object instanceof String[]){
+                String[] record = (String[]) records.get(startIndex);
+                for(int j = 1; cols != null && j <= record.length; j++){
+                    cols.next();
+                    columnTypes.add(cols.getString("TYPE_NAME"));
+                }
+
+                for(int i = startIndex; i < endIndex; i++){
+                    record = (String[]) records.get(i);
+                    for(int j = 0 ; j < record.length; j++){
+                        String colType = columnTypes.get(j);
+                        String colValue = record[j];
+                        if(colType.equals("DATE")|| colType.equals("DATETIME"))
+                        {
+                            if(colValue.equals(""))
+                                colValue = null;
+                            else
+                                colValue = formatDateOrDateTime(colType, colValue);
+                        }
+                        preStmt.setObject(j+1,colValue);
+                    }
+                    preStmt.addBatch();
+                }
+                affectedNums=preStmt.executeBatch();
+                //check affectedNums
+                for(int i = 0; i<affectedNums.length; i++){
+                    if(affectedNums[i] <= 0){
+                        flag = false;
+                        break;
+                    }
+                }
+                conn.commit();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -78,11 +111,9 @@ public class DBUtil {
                 {
                         "yyyy-MM-dd",
                         "yyyy-MM-dd HH:mm:ss",
-                       // "yyyy-MM-dd HH:mm:ss",
                         "yyyyMMdd",
                         "yyyy/MM/dd",
                         "yyyy/MM/dd HH:mm:ss",
-                       // "yyyy/MM/dd HH:mm:ss",
                         "yyyy MM dd"
                 };
         SimpleDateFormat newDf = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
@@ -98,7 +129,7 @@ public class DBUtil {
         return dateStr;
     }
 
-    public static void createAndInsertSql(final String tableName, ArrayList<String> tableColumns, final List records, int threadNum){
+    public static void createAndInsertSql(final String tableName, List<String> tableColumns, final List records, int threadNum){
         //prepared statement sql
         String insertSql = "insert into "+tableName+"(";
         int columnsSize = tableColumns.size();

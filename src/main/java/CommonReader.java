@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CommonReader {
     protected ArrayList<String> tableNamelist = new ArrayList<String>();
-    protected ArrayList<ArrayList<String>> tableColumnslist =new ArrayList<ArrayList<String>>();
+    protected ArrayList<List> tableColumnslist =new ArrayList<List>();
     protected ArrayList<List> tableDatalist = new ArrayList<List>();
     protected String filepath;
     protected InputStreamReader reader;
@@ -14,6 +14,7 @@ public class CommonReader {
     CommonReader(){
 
     }
+
     CommonReader(String filepath){
         this.filepath = filepath;
     }
@@ -22,13 +23,14 @@ public class CommonReader {
         return tableNamelist;
     }
 
-    public ArrayList<ArrayList<String>> getTableColumnslist() {
+    public ArrayList<List> getTableColumnslist() {
         return tableColumnslist;
     }
 
     public ArrayList<List> readInFile() {
         return tableDatalist;
     }
+
     public void startReader(){
         try {
             reader = new InputStreamReader(new FileInputStream(filepath), "UTF-8");

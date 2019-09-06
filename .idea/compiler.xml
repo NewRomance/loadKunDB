@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="loadKunDB" target="1.5" />
+      <module name="poiKundbTool" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
