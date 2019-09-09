@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="loadKunDB:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/loadKunDB_jar</output-path>
+    <root id="archive" name="loadKunDB.jar">
+      <element id="module-output" name="loadKunDB" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
