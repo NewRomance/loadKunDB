@@ -1,3 +1,7 @@
+import com.transwarp.loadkundb.common.CommonReader;
+import com.transwarp.loadkundb.read.TextReader;
+import com.transwarp.loadkundb.util.DBUtil;
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,14 +11,17 @@ public class Main {
             int length = args.length;
             if (length == 3) {
               //  String filePath = "/home/transwarp/messages3.csv";
-              //  String dbfilepath = "/home/transwarp/jdbc.properties";
-              //  String filePath = "/home/transwarp/文档/people2.csv";
+  //              String dbfilepath = "/home/transwarp/jdbc.properties";
+ //               String filePath = "/home/transwarp/文档/people2.txt";
 //                String dbfilepath = "/home/transwarp/IdeaProjects/loadKunDB/src/main/resources/jdbc.properties";
-//                int batchSize = 4;
+              //  int batchSize = 4;
                 String filePath = args[0];
                 String dbfilepath = args[1];
                 int  batchSize = Integer.parseInt(args[2]);
-
+                if(batchSize <= 0){
+                    System.out.println("batchSize should not be negative or zero.");
+                    return;
+                }
                 // get the fileInfo
                 int startIndex = filePath.lastIndexOf('/');
                 int endIndex = filePath.lastIndexOf('.');
@@ -31,7 +38,7 @@ public class Main {
                         System.out.println("separator should not be empty string, please input the separator!.");
                         separator = in.nextLine();
                     }
-                    commonReader = new textReader(filePath,filename,batchSize,separator);
+                    commonReader = new TextReader(filePath,filename,batchSize,separator);
 
                 }else{
                     System.out.println("not supported yet.");
@@ -41,6 +48,6 @@ public class Main {
                 commonReader.readAndHandle(dbutil);
             } else {
                 System.out.println("Params are needed.");
-            }
+           }
         }
 }
