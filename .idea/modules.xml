@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/poiKundbTool.iml" filepath="$PROJECT_DIR$/poiKundbTool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loadKunDB.iml" filepath="$PROJECT_DIR$/loadKunDB.iml" />
     </modules>
   </component>
 </project>
