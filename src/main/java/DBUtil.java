@@ -12,7 +12,7 @@ public class DBUtil {
         this.connectionPool = ConnectionPoolImpl.getInstance(dbfilepath);
     }
 
-    public static boolean insertBatch(String sql, List records, Connection conn, ArrayList<String> columnTypes){
+    public static boolean insertBatch(String sql, List records, Connection conn, List<String> columnTypes){
         boolean flag = true;
         PreparedStatement preStmt = null;
         try  {
@@ -23,18 +23,23 @@ public class DBUtil {
                 String[] record = (String[])(records.get(i));
                 for(int j = 0 ; j < record.length; j++){
                     String colType = columnTypes.get(j);
-                    byte[] colValue = record[j].getBytes();
+                    String colValue = record[j];
                     if(colType.equals("DATE")|| colType.equals("DATETIME"))
                     {
                         if(colValue != null)
                             colValue = formatDateOrDateTime(colType, colValue);
                     }
-                    preStmt.setBytes(j+1,colValue);
+                    preStmt.setObject(j+1,colValue);
                 }
                 preStmt.addBatch();
             }
             affectedNums=preStmt.executeBatch();
-            //check affectedNums
+            /**
+             * check affectedNums
+             * */
+            if(affectedNums==null||affectedNums.length==0){
+                flag = false;
+            }
             for(int i = 0; i<affectedNums.length; i++){
                 if(affectedNums[i] <= 0){
                     flag = false;
@@ -42,19 +47,23 @@ public class DBUtil {
                 }
             }
             conn.commit();
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("ERROR: errorCode:"+e.getErrorCode()+" sqlState:"+e.getSQLState()+" errorMsg:"+e.getMessage());
+            flag = false;
             e.printStackTrace();
         } finally {
             if (preStmt != null) try {
+                preStmt.clearBatch();
                 preStmt.close();
-            } catch (Exception e) {
+            } catch (SQLException e) {
+                System.out.println("ERROR: fail to close prepareStatement");
                 e.printStackTrace();
             }
         }
         return flag;
     }
 
-    public static byte[] formatDateOrDateTime(String dateType, byte[] dateStr){
+    public static String formatDateOrDateTime(String dateType, String dateStr){
         String[] possibleDateFormats =
                 {
                         "yyyy-MM-dd",
@@ -69,8 +78,8 @@ public class DBUtil {
             newDf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         }
         try{
-            Date date = DateUtils.parseDate(new String(dateStr), possibleDateFormats);
-            dateStr = newDf.format(date).getBytes();
+            Date date = DateUtils.parseDate(dateStr, possibleDateFormats);
+            dateStr = newDf.format(date);
         }catch (java.text.ParseException e){
             e.printStackTrace();
         }
@@ -98,13 +107,14 @@ public class DBUtil {
         return preStmtStr;
     }
 
-    public ArrayList<String> getColumnTypes(String tableName, Connection conn){
+    public ArrayList<String> getColumnNamesAndTypes(String tableName, List<String> columns, Connection conn){
         ArrayList<String> columnTypes = new ArrayList<String>();
         try{
             DatabaseMetaData dbmd = conn.getMetaData();
             ResultSet cols = dbmd.getColumns(null,null, tableName,null);
             while(cols.next()){
                 columnTypes.add(cols.getString("TYPE_NAME"));
+                columns.add(cols.getString("COLUMN_NAME"));
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -118,5 +128,9 @@ public class DBUtil {
 
     public static void freeConnectionPool(){
         connectionPool.freeLocalConnection();
+    }
+
+    public static void destroyConnectionPool(){
+        connectionPool.destroy();
     }
 }

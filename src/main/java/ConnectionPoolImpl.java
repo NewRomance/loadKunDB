@@ -20,7 +20,6 @@ public class ConnectionPoolImpl implements IConnectionPool{
     private Integer maxSize;
     private Integer initSize;
     private long timeOut;
-  //  private ArrayList<String> tableNamesList;
 
     //连接总数
     private AtomicInteger totalSize = new AtomicInteger(0);
@@ -93,7 +92,7 @@ public class ConnectionPoolImpl implements IConnectionPool{
 
     public void freeLocalConnection() {
         localConnection.remove();
-        System.out.println(Thread.currentThread().getName() + "释放了一个连接");
+       // System.out.println("INFO: "+Thread.currentThread().getName() + "释放了一个连接");
 
     }
 
@@ -105,16 +104,18 @@ public class ConnectionPoolImpl implements IConnectionPool{
 
     public synchronized void destroy() {
         try {
-            for(Connection connection : freeConnections) {
-                freeConnections.remove(connection);
+            for(int i = 0; i < freeConnections.size(); i++){
+                Connection connection = freeConnections.remove(i);
                 connection.close();
             }
             freeConnections = null;
-            for (Connection connection : activeConnections) {
-                activeConnections.remove(connection);
+
+            for(int i = 0; i < activeConnections.size(); i++){
+                Connection connection = activeConnections.remove(i);
                 connection.close();
             }
             activeConnections = null;
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -200,7 +201,6 @@ public class ConnectionPoolImpl implements IConnectionPool{
         this.password = p.getProperty("jdbc.password");
         this.url = p.getProperty("jdbc.url");
         this.driver = p.getProperty("jdbc.driver");
-      //  String tableNames = p.getProperty("jdbc.tables");
 
         this.maxSize = Integer.valueOf(p.getProperty("noob.maxSize","10"));
         this.initSize = Integer.valueOf(p.getProperty("noob.initSize","5"));
