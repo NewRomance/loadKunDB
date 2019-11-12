@@ -55,7 +55,7 @@ public class Main {
         if(args.length != 0) {
             /**read the config file*/
             Main.loadConfig(args[0]);
-          //  Main.loadConfig("/home/transwarp/IdeaProjects/loadKunDB/src/main/java/params.properties");
+           // Main.loadConfig("/home/transwarp/IdeaProjects/loadKunDB/src/main/java/params.properties");
             /** get the fileInfo */
             int startIndex = filePath.lastIndexOf('/');
             int endIndex = filePath.lastIndexOf('.');

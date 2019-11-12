@@ -33,6 +33,10 @@ public class textReader extends CommonReader {
             /** get columns names and columns types. */
             Connection conn = DBUtil.getConnection();
             columnTypes=dbUtil.getColumnNamesAndTypes(tableNamelist.get(0),tableColumns,conn);
+            for(int i =0 ;i < columnTypes.size();i++){
+                System.out.print(columnTypes.get(i)+"\t");
+            }
+            System.out.println("columnTypes: size = " + columnTypes.size());
             preStmtStr=dbUtil.createPrepareStatement(tableNamelist.get(0),tableColumns);
             DBUtil.freeConnectionPool();
 
@@ -42,7 +46,14 @@ public class textReader extends CommonReader {
                     hasHeaders = false;
                     continue;
                 }
-                records.add(lineTxt.split(separator));
+                String[] record = lineTxt.split(separator);
+                for(int i =0 ;i<record.length; i++){
+                    String value = record[i];
+                    if(value.charAt(0)=='\"'){
+                        record[i] = value.substring(1,value.length()-1);
+                    }
+                }
+                records.add(record);
                 count++;
                 sum++;
                 if(count == batchSize){

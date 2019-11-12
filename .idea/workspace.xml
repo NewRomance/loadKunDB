@@ -7,28 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b2dbd7a-a142-4ab8-a875-8b9cbc6e450a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/params.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/loadKunDB_jar/loadKunDB.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/loadKunDB_jar/loadKunDB.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BatchInsertRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BatchInsertRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CommonReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommonReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/loadKunDB_jar/loadKunDB.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ConnectionPoolImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnectionPoolImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/XlsxReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XlsxReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/params.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/params.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/textReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/textReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BatchInsertRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BatchInsertRunnable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CommonReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CommonReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ConnectionPoolImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ConnectionPoolImpl$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ConnectionPoolImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ConnectionPoolImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/loadKunDB.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/poiKundbTool.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/XlsxReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/XlsxReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/textReader.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,7 +30,69 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="718">
+              <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DBUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="119" column="46" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3988#3996#0" expanded="true" />
+                <element signature="e#4664#4665#0" expanded="true" />
+                <element signature="e#4704#4705#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BatchInsertRunnable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/textReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommonReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#212#220#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,6 +104,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>VARCHAR</find>
+      <find>TYPE_NAME</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -64,23 +115,23 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/DataType.java" />
         <option value="$PROJECT_DIR$/src/main/java/XlsxReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/textReader.java" />
         <option value="$PROJECT_DIR$/target/classes/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/java/CommonReader.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/ConnectionPoolImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DBUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/BatchInsertRunnable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ConnectionPoolImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/textReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/params.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DBUtil.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="488" />
-    <option name="y" value="205" />
+    <option name="x" value="692" />
+    <option name="y" value="191" />
     <option name="width" value="340" />
-    <option name="height" value="82" />
+    <option name="height" value="110" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,6 +174,41 @@
               <item name="loadKundb" type="b2602c69:ProjectViewProjectNode" />
               <item name="loadKunDB" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loadKundb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loadKunDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loadKundb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loadKunDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loadKundb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loadKunDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loadKundb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loadKunDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loadKundb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loadKunDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -140,7 +226,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -185,8 +271,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20573635" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21235521" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -195,15 +282,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7699945" weight="0.44715446" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49862108" weight="0.39939025" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.9178158" weight="0.2957317" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4975179" weight="0.33638212" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4997242" weight="0.3292683" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51627135" side_tool="true" visible="true" weight="0.3465447" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" sideWeight="0.48372862" visible="true" weight="0.3465447" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.082184225" side_tool="true" weight="0.20528455" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3292683" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.47490346" weight="0.11585366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -214,7 +301,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2697187" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21235521" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -223,15 +310,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.85328186" visible="true" weight="0.2609137" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.9178158" visible="true" weight="0.20528455" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4975179" weight="0.527439" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4997242" weight="0.3786802" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5002758" side_tool="true" weight="0.3786802" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4997242" weight="0.3292683" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.082184225" side_tool="true" visible="true" weight="0.20528455" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4903475" weight="0.29543146" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.47490346" weight="0.3465447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -264,27 +351,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbResultSet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="450" column="18" selection-start-line="450" selection-start-column="18" selection-end-line="450" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="432" column="8" selection-start-line="432" selection-start-column="8" selection-end-line="432" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="110" column="28" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbStatement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -292,24 +358,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/local/jdk1.8.0_201/src.zip!/java/sql/DatabaseMetaData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="1663" column="14" selection-start-line="1663" selection-start-column="14" selection-end-line="1663" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbMariaDBDatabaseMetadata.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="217" column="49" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbMySQLDatabaseMetadata.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5431">
-          <caret line="618" column="5" selection-start-line="618" selection-start-column="5" selection-end-line="618" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -334,13 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -376,17 +421,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+    <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbResultSet.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="243">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar!/org/apache/commons/lang3/time/DateUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbMySQLDatabaseMetadata.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3249">
+          <caret line="378" column="33" selection-start-line="378" selection-start-column="19" selection-end-line="378" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/jdk1.8.0_201/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="2866" column="18" selection-start-line="2866" selection-start-column="18" selection-end-line="2866" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="656" column="18" selection-start-line="656" selection-start-column="18" selection-end-line="656" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/io/transwarp/kundb/jdbc/KundbConnection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/IConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommonReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+        <state relative-caret-position="214">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#212#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/jdk1.8.0_201/src.zip!/java/sql/DatabaseMetaData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="1663" column="14" selection-start-line="1663" selection-start-column="14" selection-end-line="1663" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/local/jdk1.8.0_201/src.zip!/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6122">
+          <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConnectionPoolImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BatchInsertRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/params.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/textReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -395,62 +538,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DBUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        <state relative-caret-position="431">
+          <caret line="119" column="46" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4245#4253#0" expanded="true" />
-            <element signature="e#4721#4722#0" expanded="true" />
-            <element signature="e#4774#4775#0" expanded="true" />
-            <element signature="e#4820#4821#0" expanded="true" />
-            <element signature="e#4872#4873#0" expanded="true" />
-            <element signature="e#4921#4922#0" expanded="true" />
-            <element signature="e#4961#4962#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConnectionPoolImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2530">
-          <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#786#798#0" expanded="true" />
-            <element signature="e#890#902#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BatchInsertRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/params.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/textReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1152">
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#906#916#0" expanded="true" />
-            <element signature="e#972#980#0" expanded="true" />
+            <element signature="e#3988#3996#0" expanded="true" />
+            <element signature="e#4664#4665#0" expanded="true" />
+            <element signature="e#4704#4705#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="58" column="35" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="101" />
+        <state relative-caret-position="718">
+          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -468,6 +570,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

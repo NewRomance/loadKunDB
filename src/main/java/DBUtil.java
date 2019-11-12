@@ -27,7 +27,7 @@ public class DBUtil {
                     if(colType.equals("DATE")|| colType.equals("DATETIME"))
                     {
                         if(colValue != null)
-                            colValue = formatDateOrDateTime(colType, colValue);
+                            colValue = formatDateOrDateTime(colValue);
                     }
                     preStmt.setObject(j+1,colValue);
                 }
@@ -63,24 +63,32 @@ public class DBUtil {
         return flag;
     }
 
-    public static String formatDateOrDateTime(String dateType, String dateStr){
+    public static String formatDateOrDateTime(String dateStr){
         String[] possibleDateFormats =
                 {
                         "yyyy-MM-dd",
                         "yyyy-MM-dd HH:mm:ss",
-                        "yyyyMMdd",
-                        "yyyy/MM/dd",
-                        "yyyy/MM/dd HH:mm:ss",
-                        "yyyy MM dd"
+                        "yyyy-MM-dd HH:mm:ss.xxxxxx",
+                     //   "yyyyMMdd",
+                    //    "yyyy/MM/dd",
+                      //  "yyyy/MM/dd HH:mm:ss",
+                     //   "yyyy MM dd",
+                        "\"yyyy-MM-dd\"",
+                        "\"yyyy-MM-dd HH:mm:ss\"",
+                        "\"yyyy-MM-dd HH:mm:ss.xxxxxx\""
+                      //  "\"yyyyMMdd\"",
+                      //  "\"yyyy/MM/dd\"",
+                      //  "\"yyyy/MM/dd HH:mm:ss\"",
+                       // "\"yyyy MM dd\"",
                 };
-        SimpleDateFormat newDf = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
-        if(dateType.equals("DATETIME")) {
-            newDf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        }
+      //  SimpleDateFormat newDf = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+//        if(dateType.equals("DATETIME")) {
+//            newDf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        }
         try{
-            Date date = DateUtils.parseDate(dateStr, possibleDateFormats);
-            dateStr = newDf.format(date);
+            DateUtils.parseDate(dateStr, possibleDateFormats);
         }catch (java.text.ParseException e){
+            System.out.printf("ERROR: invalid dateTime type, value = %s.", dateStr);
             e.printStackTrace();
         }
         return dateStr;
@@ -108,11 +116,13 @@ public class DBUtil {
     }
 
     public ArrayList<String> getColumnNamesAndTypes(String tableName, List<String> columns, Connection conn){
+        System.out.printf("tableName is %s\n", tableName);
         ArrayList<String> columnTypes = new ArrayList<String>();
         try{
             DatabaseMetaData dbmd = conn.getMetaData();
             ResultSet cols = dbmd.getColumns(null,null, tableName,null);
             while(cols.next()){
+                System.out.printf("type name is %s, column name is %s", cols.getString("TYPE_NAME"), cols.getString("COLUMN_NAME"));
                 columnTypes.add(cols.getString("TYPE_NAME"));
                 columns.add(cols.getString("COLUMN_NAME"));
             }

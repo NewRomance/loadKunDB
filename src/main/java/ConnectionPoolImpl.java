@@ -116,6 +116,7 @@ public class ConnectionPoolImpl implements IConnectionPool{
             }
             activeConnections = null;
 
+            System.out.println("INFO: all connections are freed.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
