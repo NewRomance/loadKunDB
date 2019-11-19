@@ -63,8 +63,8 @@ public class textReader extends CommonReader {
                         }
                     }
                     builder.append("\n");
-                    fos.write(builder.toString().getBytes(encoding));
                 }
+                fos.write(builder.toString().getBytes(encoding));
                 System.out.println("WARN: write failed batch data into "+ filename);
                 fos.close();
             } catch (java.io.IOException e) {
