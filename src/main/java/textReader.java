@@ -29,7 +29,6 @@ public class textReader extends CommonReader {
             System.out.println("ERROR: file already exists, please rename the directory.");
             System.exit(0);
         }
-        System.out.println(allowFailedFileCount);
     }
 
     /**
