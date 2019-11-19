@@ -1,2 +1,2 @@
 # loadKunDB
-load csv and excel files into KunDB
+load text and excel(now not support) files into KunDB
