@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/main/libs/kundb-jdbc-1.2.0-SNAPSHOT-fatjar-20190828.jar!/" />

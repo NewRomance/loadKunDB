@@ -9,7 +9,7 @@ public class CommonReader {
     protected InputStreamReader reader;
     protected int batchSize;
     protected int threadsNum;
-    protected String encoding;
+    protected static String encoding;
 
     CommonReader(){
 

@@ -1,8 +1,5 @@
-import org.apache.commons.lang3.time.DateUtils;
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class DBUtil {
@@ -12,45 +9,68 @@ public class DBUtil {
         this.connectionPool = ConnectionPoolImpl.getInstance(dbfilepath);
     }
 
-    public static boolean insertBatch(String sql, List records, Connection conn, List<String> columnTypes){
+    /**
+     * 去除分隔符
+     * */
+    public static String trimStartAndEnd(String value, String enclosedCh){
+        if(value != null && value.length() >= 2 && enclosedCh!=null && !enclosedCh.equals("")){
+            String start = value.charAt(0)+"";
+            int length = value.length();
+            String end = value.charAt(length-1)+"";
+            if(start.equals(enclosedCh) && end.equals(enclosedCh))
+                value=value.substring(1, length-1);
+        }
+        return value;
+    }
+
+    /**
+     * 判空函数,
+     * 目前认为列值为空的情况
+     * 所有类型包括字符串，如果一开始列值就没有enclosedCh包围，则认为是空值；如果enclosedCh为“，列值为“NULL”或者“null”，则认为为空值。
+     * */
+    public static boolean isNull(String colvalue, String enclosedCh){
+        if (colvalue == null || colvalue.equals("")) return true;
+        colvalue = trimStartAndEnd(colvalue,enclosedCh);
+        if (colvalue.equals("NULL")|| colvalue.equals("null"))
+            return true;
+        return false;
+    }
+
+    public static boolean insertBatch(String sql, List records, String enclosedCh, Connection conn, List<String> columnTypes, int start, int end){
         boolean flag = true;
         PreparedStatement preStmt = null;
         try  {
             preStmt=conn.prepareStatement(sql);
+            System.out.println("INFO: start to insert batch data range between ["+start+","+end+")");
             conn.setAutoCommit(false);
-            int[] affectedNums;
             for(int i = 0; i < records.size(); i++){
                 String[] record = (String[])(records.get(i));
                 for(int j = 0 ; j < record.length; j++){
-                    String colType = columnTypes.get(j);
                     String colValue = record[j];
-                    if(colType.equals("DATE")|| colType.equals("DATETIME"))
-                    {
-                        if(colValue != null)
-                            colValue = formatDateOrDateTime(colValue);
+                    if (isNull(colValue, enclosedCh)) {
+                        preStmt.setNull(j+1,0);
+                    }else{
+                        colValue = trimStartAndEnd(colValue, enclosedCh);
+                        preStmt.setObject(j+1,colValue);
                     }
-                    preStmt.setObject(j+1,colValue);
                 }
                 preStmt.addBatch();
             }
-            affectedNums=preStmt.executeBatch();
+            preStmt.executeBatch();
             /**
              * check affectedNums
              * */
-            if(affectedNums==null||affectedNums.length==0){
-                flag = false;
-            }
-            for(int i = 0; i<affectedNums.length; i++){
-                if(affectedNums[i] <= 0){
-                    flag = false;
-                    break;
-                }
-            }
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERROR: errorCode:"+e.getErrorCode()+" sqlState:"+e.getSQLState()+" errorMsg:"+e.getMessage());
+            //System.out.println("ERROR: errorCode:"+e.getErrorCode()+" sqlState:"+e.getSQLState()+" errorMsg:"+e.getMessage());
             flag = false;
-            e.printStackTrace();
+            try {
+                conn.rollback();
+                System.out.println("ERROR: fail to execute transaction(data range between ["+start+","+end+"),)"+"and it will be rollback.");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            //e.printStackTrace();
         } finally {
             if (preStmt != null) try {
                 preStmt.clearBatch();
@@ -61,37 +81,6 @@ public class DBUtil {
             }
         }
         return flag;
-    }
-
-    public static String formatDateOrDateTime(String dateStr){
-        String[] possibleDateFormats =
-                {
-                        "yyyy-MM-dd",
-                        "yyyy-MM-dd HH:mm:ss",
-                        "yyyy-MM-dd HH:mm:ss.xxxxxx",
-                     //   "yyyyMMdd",
-                    //    "yyyy/MM/dd",
-                      //  "yyyy/MM/dd HH:mm:ss",
-                     //   "yyyy MM dd",
-                        "\"yyyy-MM-dd\"",
-                        "\"yyyy-MM-dd HH:mm:ss\"",
-                        "\"yyyy-MM-dd HH:mm:ss.xxxxxx\""
-                      //  "\"yyyyMMdd\"",
-                      //  "\"yyyy/MM/dd\"",
-                      //  "\"yyyy/MM/dd HH:mm:ss\"",
-                       // "\"yyyy MM dd\"",
-                };
-      //  SimpleDateFormat newDf = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
-//        if(dateType.equals("DATETIME")) {
-//            newDf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        }
-        try{
-            DateUtils.parseDate(dateStr, possibleDateFormats);
-        }catch (java.text.ParseException e){
-            System.out.printf("ERROR: invalid dateTime type, value = %s.", dateStr);
-            e.printStackTrace();
-        }
-        return dateStr;
     }
 
     public String createPrepareStatement(String tableName, List<String> tableColumns){
@@ -116,13 +105,14 @@ public class DBUtil {
     }
 
     public ArrayList<String> getColumnNamesAndTypes(String tableName, List<String> columns, Connection conn){
-        System.out.printf("tableName is %s\n", tableName);
+        System.out.printf("INFO: tableName is %s ", tableName);
+        System.out.println();
         ArrayList<String> columnTypes = new ArrayList<String>();
         try{
             DatabaseMetaData dbmd = conn.getMetaData();
             ResultSet cols = dbmd.getColumns(null,null, tableName,null);
             while(cols.next()){
-                System.out.printf("type name is %s, column name is %s", cols.getString("TYPE_NAME"), cols.getString("COLUMN_NAME"));
+                //   System.out.printf("type name is %s, column name is %s", cols.getString("TYPE_NAME"), cols.getString("COLUMN_NAME"));
                 columnTypes.add(cols.getString("TYPE_NAME"));
                 columns.add(cols.getString("COLUMN_NAME"));
             }
